@@ -17,7 +17,12 @@ class Home extends React.Component {
       <div>
         <div>
           <h1>Main Page</h1>
-          {this.props.todos.length ? JSON.stringify(this.props.todos) : null}
+          {this.props.todos.length ?
+          {this.props.todos.map(todo =>
+            <ul key={todo.key}>
+              <li>{todo}</li>
+            </ul>
+          )}: null}
         </div>
       </div>
     );

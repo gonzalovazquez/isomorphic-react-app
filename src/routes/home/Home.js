@@ -10,6 +10,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import ListTodo from '../../components/ListTodo/ListTodo';
 
 class Home extends React.Component {
   render() {
@@ -17,12 +18,7 @@ class Home extends React.Component {
       <div>
         <div>
           <h1>Main Page</h1>
-          {this.props.todos.length ?
-          {this.props.todos.map(todo =>
-            <ul key={todo.key}>
-              <li>{todo}</li>
-            </ul>
-          )}: null}
+          <ListTodo todos={this.props.todos} />
         </div>
       </div>
     );
